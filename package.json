@@ -131,7 +131,7 @@
 		"jetpack-cli": "file:tools/cli",
 		"jsdom": "16.4.0",
 		"jsdom-global": "3.0.2",
-		"mocha": "8.2.1",
+		"mocha": "8.4.0",
 		"moment": "2.29.1",
 		"nock": "13.0.7",
 		"parse-diff": "0.8.1",
