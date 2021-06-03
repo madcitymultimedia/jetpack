@@ -88,7 +88,7 @@
 		"chalk": "4.1.1"
 	},
 	"devDependencies": {
-		"@wordpress/eslint-plugin": "7.4.0",
+		"@wordpress/eslint-plugin": "9.0.6",
 		"babel-eslint": "10.1.0",
 		"commander": "7.2.0",
 		"concurrently": "6.0.2",
