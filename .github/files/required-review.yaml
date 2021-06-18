@@ -19,6 +19,7 @@
    - 'projects/plugins/vaultpress/**'
   teams:
    - yamato-backup-and-security
+   - jetpack-approvers
 
 # Jetpack Approvers review everything that hasn't been specifically assigned above.
 # This needs to be last.
@@ -26,4 +27,3 @@
   paths: unmatched
   teams:
    - jetpack-approvers
-
