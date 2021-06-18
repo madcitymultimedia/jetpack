@@ -13,7 +13,7 @@
   teams:
    - jetpack-approvers
 
-# The Backup team review changes to the VaultPress plugin.
+# The Backup team reviews changes to the VaultPress plugin.
 - name: VaultPress
   paths:
    - 'projects/plugins/vaultpress/**'
