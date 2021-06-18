@@ -751,6 +751,12 @@
 			var previousPrevious = getPrevSlide( prev );
 			var nextNext = getNextSlide( next );
 			var captionHtml;
+			var photoMetaContainer = carousel.info.querySelector( '.jp-carousel-image-meta' );
+			var commentsContainer = carousel.container.querySelector( '.jp-carousel-comments' );
+
+			// Hide comments and photo info and meta for smaller screens.
+			photoMetaContainer.classList.remove( 'jp-carousel-show' );
+			commentsContainer.classList.remove( 'jp-carousel-show' );
 
 			carousel.slides.forEach( function ( slide ) {
 				slide.el.style.position = 'fixed';
@@ -1186,15 +1192,12 @@
 
 			if ( domUtil.closest( target, '.jp-carousel-icon-info' ) ) {
 				var photoMetaContainer = carousel.info.querySelector( '.jp-carousel-image-meta' );
-				var titleAndDescContainer = carousel.container.querySelector( '.jp-carousel-titleanddesc' );
 
 				if ( photoMetaContainer ) {
 					photoMetaContainer.classList.toggle( 'jp-carousel-show' );
-					domUtil.scrollToElement( photoMetaContainer );
-				}
-
-				if ( titleAndDescContainer ) {
-					titleAndDescContainer.classList.toggle( 'jp-carousel-show' );
+					if ( photoMetaContainer.classList.contains( 'jp-carousel-show' ) ) {
+						domUtil.scrollToElement( photoMetaContainer );
+					}
 				}
 			}
 
@@ -1202,7 +1205,9 @@
 				var commentsContainer = carousel.container.querySelector( '.jp-carousel-comments' );
 				if ( commentsContainer ) {
 					commentsContainer.classList.toggle( 'jp-carousel-show' );
-					domUtil.scrollToElement( commentsContainer );
+					if ( commentsContainer.classList.contains( 'jp-carousel-show' ) ) {
+						domUtil.scrollToElement( commentsContainer );
+					}
 				}
 			}
 		}
