@@ -29,11 +29,17 @@
 		],
 		"build-development": [
 			"Composer\\Config::disableProcessTimeout",
-			"pnpm run build"
+			"@clean",
+			"@composer install --ignore-platform-reqs"
 		],
 		"build-production": [
 			"Composer\\Config::disableProcessTimeout",
-			"pnpm run build-production"
+			"@clean",
+			"@putenv COMPOSER_MIRROR_PATH_REPOS=1 COMPOSER_ROOT_VERSION=dev-master",
+			"@composer install -o --no-dev --classmap-authoritative --prefer-dist"
+		],
+		"clean": [
+			"rm -rf vendor/"
 		]
 	},
 	"repositories": [
